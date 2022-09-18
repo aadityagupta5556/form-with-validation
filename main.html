@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>loginform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+
+    <section class="container">
+
+    <form action="#"  class="main" id="form" onsubmit="return validation()">
+    
+        <label for="name">Enter the name:</label>      
+        <input type="text" name="name" id="name" autocomplete="off">
+        <span id="username"></span><br>
+        <label for="age">Enter the age:</label> 
+        <input type="number" name="age" id="age" autocomplete="off">
+        <span id="userage"></span><br>
+        <label for="email">Enter the email:</label> 
+        <input type="email" name="email" id="email" autocomplete="off">
+        <span id="useremail"></span><br>
+        <label for="number">Enter the mobile number:</label> 
+        <input type="number" name="number" id="number" autocomplete="off">
+        <span id="usernumber"></span><br>
+        <label for="password">Enter the password:</label> 
+        <input type="password" name="password" id="pass" autocomplete="off">
+        <span id="userpass"></span><br>
+        <label for="name">Plz re-enter the password:</label> 
+        <input type="password" name=" confirmpassword" id="confirmpass" autocomplete="off">
+        <span id="userconfipass"></span><br>
+        <button type="submit" id="submission" value="submit" onclick="submitted()"> submit</button>
+
+
+    </form>
+</section>
+
+
+<script>
+function validation(){
+
+
+
+let name=document.getElementById('name').value
+let age=document.getElementById('age').value
+let email=document.getElementById('email').value
+let number=document.getElementById('number').value
+let password=document.getElementById('pass').value
+let confirmpassword=document.getElementById('confirmpass').value
+
+//name validation part
+if(name==""){
+    document.getElementById('username').innerHTML="plz enter something"
+    return false
+}
+
+if(!isNaN(name)){
+    document.getElementById('username').innerHTML="name cannot be number"
+    return false
+}
+if((name.length<=2) ||(name.length>=20)){
+    document.getElementById('username').innerHTML="plz enter the name length between 2 to 20"
+    return false
+}
+
+
+
+
+//age validation
+if(age==""){
+    document.getElementById('userage').innerHTML="plz enter something"
+    return false
+}
+
+if(age>18){
+    document.getElementById('userage').innerHTML="the age of the person is greater then 18"
+    return false
+
+}
+
+
+// email validation
+
+if(email==""){
+    document.getElementById('useremail').innerHTML="plz enter something"
+    return false
+}
+
+
+// number validation
+if(number==""){
+    document.getElementById('usernumber').innerHTML="plz enter something"
+    return false
+}
+if(isNaN(number)){
+    document.getElementById('usernumber').innerHTML="plz enter only number"
+    return false
+}
+if(number.length!=10){
+    document.getElementById('usernumber').innerHTML="the mobile number contain only 10 digit"
+    return false
+}
+
+
+
+//password validation
+if(password==""){
+    document.getElementById('userpass').innerHTML="plz enter something"
+    return false
+}
+if((password.length<=8) ||(password.length>=16)){
+    document.getElementById('userpass').innerHTML="plz enter the password length between 8 to 16"
+    return false
+}
+if(password!=confirmpassword){
+    document.getElementById('userconfipass').innerHTML="plz enter same password"
+    return false
+
+
+}
+if(confirmpassword==""){
+    document.getElementById('userconfipass').innerHTML="plz enter something"
+    return false
+}
+return true
+
+}
+
+function submitted(){
+if(validation()==true){
+
+
+alert("the form is submitted")
+}
+}
+
+
+
+</script>
+    
+</body>
+</html>
