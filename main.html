@@ -36,108 +36,136 @@
     </form>
 </section>
 
-
 <script>
-function validation(){
-
-
-
-let name=document.getElementById('name').value
-let age=document.getElementById('age').value
-let email=document.getElementById('email').value
-let number=document.getElementById('number').value
-let password=document.getElementById('pass').value
-let confirmpassword=document.getElementById('confirmpass').value
-
-//name validation part
-if(name==""){
-    document.getElementById('username').innerHTML="plz enter something"
-    return false
-}
-
-if(!isNaN(name)){
-    document.getElementById('username').innerHTML="name cannot be number"
-    return false
-}
-if((name.length<=2) ||(name.length>=20)){
-    document.getElementById('username').innerHTML="plz enter the name length between 2 to 20"
-    return false
-}
-
-
-
-
-//age validation
-if(age==""){
-    document.getElementById('userage').innerHTML="plz enter something"
-    return false
-}
-
-if(age>18){
-    document.getElementById('userage').innerHTML="the age of the person is greater then 18"
-    return false
-
-}
-
-
-// email validation
-
-if(email==""){
-    document.getElementById('useremail').innerHTML="plz enter something"
-    return false
-}
-
-
-// number validation
-if(number==""){
-    document.getElementById('usernumber').innerHTML="plz enter something"
-    return false
-}
-if(isNaN(number)){
-    document.getElementById('usernumber').innerHTML="plz enter only number"
-    return false
-}
-if(number.length!=10){
-    document.getElementById('usernumber').innerHTML="the mobile number contain only 10 digit"
-    return false
-}
-
-
-
-//password validation
-if(password==""){
-    document.getElementById('userpass').innerHTML="plz enter something"
-    return false
-}
-if((password.length<=8) ||(password.length>=16)){
-    document.getElementById('userpass').innerHTML="plz enter the password length between 8 to 16"
-    return false
-}
-if(password!=confirmpassword){
-    document.getElementById('userconfipass').innerHTML="plz enter same password"
-    return false
-
-
-}
-if(confirmpassword==""){
-    document.getElementById('userconfipass').innerHTML="plz enter something"
-    return false
-}
-return true
-
-}
-
-function submitted(){
-if(validation()==true){
-
-
-alert("the form is submitted")
-}
-}
-
-
-
-</script>
+    function validation(){
+    
+    
+    
+    let name=document.getElementById('name').value
+    let age=document.getElementById('age').value
+    let email=document.getElementById('email').value
+    let number=document.getElementById('number').value
+    let password=document.getElementById('pass').value
+    let confirmpassword=document.getElementById('confirmpass').value
+    
+    //name validation part
+    if(name==""){
+        document.getElementById('username').innerHTML="plz enter something";
+        return false
+    }else{
+        document.getElementById('username').innerHTML=""
+    }
+    
+    
+    if(!isNaN(name)){
+        document.getElementById('username').innerHTML="name cannot be number"
+        return false
+    }
+    else{
+        document.getElementById('username').innerHTML=""
+    }
+    
+    if((name.length<=2) ||(name.length>=20)){
+        document.getElementById('username').innerHTML="plz enter the name length between 2 to 20"
+        return false
+    }else{
+        document.getElementById('username').innerHTML=""
+    }
+    
+    
+    
+    
+    //age validation
+    if(age==""){
+        document.getElementById('userage').innerHTML="plz enter something"
+        return false
+    }else{
+        document.getElementById('userage').innerHTML=""
+    }
+    
+    if(age>18){
+        document.getElementById('userage').innerHTML="the age of the person is greater then 18"
+        return false
+    
+    }else{
+        document.getElementById('userage').innerHTML=""
+    }
+    
+    
+    // email validation
+    
+    if(email==""){
+        document.getElementById('useremail').innerHTML="plz enter something"
+        return false
+    }else{
+        document.getElementById('useremail').innerHTML=""
+    }
+    
+    
+    // number validation
+    if(number==""){
+        document.getElementById('usernumber').innerHTML="plz enter something"
+        return false
+    }else{
+        document.getElementById('usernumber').innerHTML=""
+    }
+    if(isNaN(number)){
+        document.getElementById('usernumber').innerHTML="plz enter only number"
+        return false
+    }else{
+        document.getElementById('usernumber').innerHTML=""
+    }
+    if(number.length!=10){
+        document.getElementById('usernumber').innerHTML="the mobile number contain only 10 digit"
+        return false
+    }else{
+        document.getElementById('usernumber').innerHTML=""
+    }
+    
+    
+    
+    //password validation
+    if(password==""){
+        document.getElementById('userpass').innerHTML="plz enter something"
+        return false
+    }else{
+        document.getElementById('userpass').innerHTML=""
+    }
+    if((password.length<=8) ||(password.length>=16)){
+        document.getElementById('userpass').innerHTML="plz enter the password length between 8 to 16"
+        return false
+    }else{
+        document.getElementById('userpass').innerHTML=""
+    }
+    
+    
+    if(password!=confirmpassword){
+        document.getElementById('userconfipass').innerHTML="plz enter same password"
+        return false
+    }else{
+        document.getElementById('userconfipass').innerHTML=""
+    }
+    if(confirmpassword==""){
+        document.getElementById('userconfipass').innerHTML="plz enter something"
+        return false
+    }else{
+        document.getElementById('userconfipass').innerHTML=""
+    }
+    
+    
+    return true
+    }
+    
+    function submitted(){
+    if(validation()==true){
+    
+    alert("the form is submitted")
+    }
+    }
+    
+    
+    
+    </script>
     
 </body>
 </html>
